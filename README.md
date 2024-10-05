@@ -15,7 +15,7 @@ This repository contains a script to train and test pre-trained ResNet models on
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/train_and_test_resnet.git
+    git clone https://github.com/nielseni6/EvalAttAI.git
     cd train_and_test_resnet
     ```
 
