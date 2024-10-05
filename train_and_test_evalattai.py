@@ -118,6 +118,21 @@ def vanilla_grad(model, inputs, labels=None, criterion=None):
 
 # Function to test the model
 def evalattai(model, test_loader, criterion, args, alpha=0.1, N=10, debug=False):
+    """
+    Evaluate the model using various attribution methods and calculate accuracy and confidence intervals.
+    Args:
+        model (torch.nn.Module): The neural network model to be evaluated.
+        test_loader (torch.utils.data.DataLoader): DataLoader for the test dataset.
+        criterion (torch.nn.Module): Loss function.
+        args (argparse.Namespace): Arguments containing the attribution method and other configurations.
+        alpha (float, optional): Scaling factor for modifying inputs with attributions. Default is 0.1.
+        N (int, optional): Number of iterations for modifying inputs. Default is 10.
+        debug (bool, optional): If True, save debug images of modified inputs. Default is False.
+    Returns:
+        tuple: A tuple containing:
+            - accuracies (list): List of accuracies for each iteration.
+            - confidence_intervals (dict): Dictionary containing 95% confidence intervals for each iteration.
+    """
     print('Starting Testing')
     model.eval()
     test_losses = [0.0] * N
