@@ -32,7 +32,7 @@ The script can be run from the command line with various arguments to customize 
 ### Command Line Arguments
 
 - `--dataset`: Dataset to use ([`cifar10`], [`cifar100`], or [`mnist`]). Default is [`cifar10`].
-- `--device`: CUDA device to use (e.g., [`0`], `0,1,2,3`, or [`cpu`]). Default is [`1`].
+- `--device`: CUDA device to use (e.g., [`0`], `0,1,2,3`, or [`cpu`]). Default is [`0`].
 - `--train`: Flag to indicate whether to train the model. Default is [`False`].
 - `--save-folder`: Path to save the model weights. Default is [`model_weights`].
 - `--load-path`: Path to load the model weights. Default is an empty string.
