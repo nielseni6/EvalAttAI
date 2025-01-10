@@ -253,7 +253,7 @@ if __name__ == '__main__':
     parser.add_argument('--pgd-alpha', type=float, default=0.03, help='Alpha value for PGD attack')
     parser.add_argument('--pgd-num-iter', type=int, default=10, help='Number of iterations for PGD attack')
     parser.add_argument('--attr_methods', type=str, nargs='+', default=['random', 'VG', 'gradximage', 'GB', 'IG', 'SG', 'GC'], help='List of attribution methods to use: VG, GB, IG, SG, GC, random, gradximage')
-    parser.add_argument('--norm', type=bool, default=True, help='Flag to indicate whether to normalize accuracies to the random method')
+    parser.add_argument('--norm', action='store_true', help='Flag to indicate whether to normalize accuracies to the random method')
     args = parser.parse_args()
 
     # Set CUDA device
