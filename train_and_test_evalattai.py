@@ -434,10 +434,10 @@ if __name__ == '__main__':
         random_accuracies = results['random']['accuracies']
         for attr_method in results:
             # if attr_method != 'random':
-            results[attr_method]['accuracies'] = [acc - rand_acc for acc, rand_acc in zip(results[attr_method]['accuracies'], random_accuracies)]
+            results[attr_method]['accuracies'] = [acc / rand_acc for acc, rand_acc in zip(results[attr_method]['accuracies'], random_accuracies)]
             ci_ = results[attr_method]['confidence_intervals']
             results[attr_method]['confidence_intervals'] = [
-                (ci_[ix][0] - random_accuracies[ix], ci_[ix][1] - random_accuracies[ix]) for ix in range(len(results[attr_method]['confidence_intervals']))
+                (ci_[ix][0] / random_accuracies[ix], ci_[ix][1] / random_accuracies[ix]) for ix in range(len(results[attr_method]['confidence_intervals']))
             ]
 
     # Plot accuracies vs N with confidence intervals for all methods
